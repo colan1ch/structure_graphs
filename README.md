@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1425449948.svg)](https://doi.org/10.5281/zenodo.23480412)
+
 # Structure Graphs of Associative Rings — Computational Verification
 
 Computational support for the paper
