@@ -1,0 +1,2 @@
+ring;order;conn.comp.;expected;res
+GF(4);4;4;=4;OK

@@ -1,0 +1,5 @@
+ring;order;conn.comp.;expected;res
+GF(8);8;9;>8;OK
+GF(16);16;17;>16;OK
+GF(32);32;33;>32;OK
+GF(128);128;139;>128;OK

@@ -1,0 +1,4 @@
+ring;order;conn.comp.;expected;res
+Z_2;2;2;=2;OK
+Z_3;3;3;=3;OK
+Z_7;7;7;=7;OK

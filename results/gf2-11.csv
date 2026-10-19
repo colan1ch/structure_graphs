@@ -1,0 +1,2 @@
+ring;order;conn.comp.;expected;res
+GF(2048);2048;2056;>2048;OK
