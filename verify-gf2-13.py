@@ -4,14 +4,11 @@
 """
 import igraph as ig
 import csv
-import time
 
-# Fixing start time
-start_time = time.perf_counter()
 
 OUTPUT_FILE = "results\gf2-13.csv"
 
-# --------------------------- Класс поля GF(2^n) ---------------------------
+# --------------------------- Class of field GF(2^n) ---------------------------
 class GF2n:
     """Galouis field of char 2."""
     def __init__(self, n, irreducible_poly):
@@ -114,11 +111,3 @@ for p in primes:
 with open(OUTPUT_FILE, "w", newline="", encoding="utf-8") as f:
     writer = csv.writer(f, delimiter=';')
     writer.writerows(collect)
-    
-# Fixing end time
-end_time = time.perf_counter()
-
-execution_time = end_time - start_time
-
-print(f"Time of execution: {execution_time:.6f} sec")
-    

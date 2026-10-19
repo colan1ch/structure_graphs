@@ -8,7 +8,7 @@ import csv
 
 OUTPUT_FILE = "results\gf8-gf128.csv"
 
-# --------------------------- Класс поля GF(2^n) ---------------------------
+# --------------------------- Class of field GF(2^n) ---------------------------
 class GF2n:
     """Galouis field of char 2."""
     def __init__(self, n, irreducible_poly):
@@ -92,7 +92,7 @@ def main(p, verbose=True, plot=True):
 # Creating list of extension degrees
 primes = [3,4,5,7]
 
-print(f'verify-gf8-gf16-gf32-gf128, method = structure graph, output = {OUTPUT_FILE}')
+print(f'verify-gf8-gf128, method = structure graph, output = {OUTPUT_FILE}')
 collect = [['ring', 'order', 'conn.comp.', 'expected', 'res']]
 for p in primes:
     order = 2**p

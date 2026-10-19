@@ -6,8 +6,7 @@ import igraph as ig
 import galois
 import csv
 
-OUTPUT_FILE = "results\gf9-gf49.csv"
-
+OUTPUT_FILE = "results\primes-gf9-gf49.csv"
 
 def build_graph(p: int, n: int = 1) -> ig.Graph:
     """
@@ -18,8 +17,8 @@ def build_graph(p: int, n: int = 1) -> ig.Graph:
 
     q = p ** n
     GF = galois.GF(q)
-    elements = GF.elements                # все элементы (массив FieldArray)
-    # Ключи – целочисленные представления (хешируемые)
+    elements = GF.elements                # All field elements
+    # 
     element_to_idx = {int(elem): i for i, elem in enumerate(elements)}
 
     g = ig.Graph(directed=True)
@@ -27,7 +26,7 @@ def build_graph(p: int, n: int = 1) -> ig.Graph:
 
     for i, x in enumerate(elements):
         y = x - x * x 
-        j = element_to_idx[int(y)]        # приводим y к int для поиска
+        j = element_to_idx[int(y)]        
         g.add_edge(i, j)
 
     return g, elements
@@ -43,9 +42,6 @@ def main(p: int, n: int = 2):
     return len(components)
 
 
-# For GF(9) (p=3, n=2):
-# and
-# For GF(49) (p=7, n=2):
 primes=[3, 7]
 print(f'verify-gf9-gf49, method = graph of mapping, output={OUTPUT_FILE}')
 collect = [['ring', 'order', 'conn.comp.', 'expected', 'res']]

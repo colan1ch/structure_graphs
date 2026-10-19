@@ -8,9 +8,9 @@ from collections import deque
 
 OUTPUT_FILE = "results\gf4.csv"
 
-# --------------------------- Класс поля GF(2^n) ---------------------------
+# --------------------------- Class of field GF(2^n) ---------------------------
 class GF2n:
-    """Поле Галуа характеристики 2."""
+    """Galois field of char 2."""
     def __init__(self, n, irreducible_poly):
         self.n = n
         self.size = 1 << n
@@ -68,8 +68,6 @@ def build_graph(gf):
     size = gf.size
     total_v = size * size
     edges = []
-    # Список предшественников для BFS
-    preds = [[] for _ in range(total_v)]
 
     for a in range(size):
         for b in range(size):
@@ -78,15 +76,9 @@ def build_graph(gf):
             p = gf.mul(a, b)
             dst = s * size + p
             edges.append((src, dst))
-            preds[dst].append(src)
 
     g = ig.Graph(n=total_v, edges=edges, directed=True)
-    g.vs["name"] = [x for x in range(16)]
-    g.vs["name"] =["0, 0", "0, 1", "0, x", "0,\n x+1",
-                   "1, 0", "1, 1", "1, x", "1,\n x+1",
-                   "x, 0", "x, 1", "x, x", "x,\n x+1",
-                   "x+1,\n 0", "x+1,\n 1", "x+1,\n x", "x+1,\n x+1",
-                   ]
+
     return g
 
 
