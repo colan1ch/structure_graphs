@@ -14,8 +14,24 @@ The repository contains the scripts that verify every computational claim of the
 
 - Python ≥ 3.10
 - [`igraph`](https://python.igraph.org/) ≥ 0.11
+- [`galois`](https://pypi.org/project/galois//) ≥ 0.4.11
 
 ## Claims verified
+
+To verify the claims stated at the article one should install requied packages,
+and run the suitable script (without any additional command-line arguments or manual input).
+The console output is:
+- scpipt name
+- metod using (structure graph of graph of mapping)
+- output file name.
+
+After the computation is complete, the program outputs:
+- Analyzed ring
+- order of the ring
+- number of connected components
+- is the result consistent with the assumptions.
+
+Also the program creates the csv-file with the results of computaion.
 
 Correspondence between scripts and statements claimed in the article see in table below.
 
@@ -29,7 +45,8 @@ Correspondence between scripts and statements claimed in the article see in tabl
 | 6 | `GF(2^11)`, `m <= 13`, `m != 2`, has `> n` components | — | `verify-gf2-11` | `results/gf2-11.csv` |
 | 7 | `GF(2^13)`, `m <= 13`, `m != 2`, has `> n` components | — | `verify-gf2-13` | `results/gf2-13.csv` |
 
-Claims 1, 2 and (part. 3)  are included for completeness and independence of exposition: they re-derive previously known cases from scratch, without relying on the published constructions.
+Claims 1, 2 and partually 3)  are included for completeness and independence of exposition:
+ they re-derive previously known cases from scratch, without relying on the published constructions.
 Claims 3 (for p>200) – 7 are the new computational cases of the paper.
 
 ## Citing and data availability
@@ -40,7 +57,7 @@ repository is available at Zenodo:
 > Chernev A.M., Chernev N.A. *Computational verification for "On the Connectivity
 > Components of Structure Graphs of Associative Rings"*. Zenodo.
 >
-> DOI: 10.5281/zenodo.XXXXXXX
+> DOI: 10.5281/zenodo.23480412
 
 The DOI refers to a frozen snapshot; the GitHub repository may contain
 additional development commits.
